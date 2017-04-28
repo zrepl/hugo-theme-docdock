@@ -1,13 +1,20 @@
-{{ if .Content }}
 {{ partial "header.html" . }}
-{{ .Content }}
+
+{{ $paginator := .Paginator }}
+
+<div class="extra-pagination inner">
+{{ partial "pagination.html" $paginator }}
+</div>
+
+{{ range $index, $page := $paginator.Pages }}
+   {{ .Render "li" }}
+{{ end }}
+
+<div style="margin-bottom:2rem"></div>
+
+{{ partial "pagination.html" $paginator }}
+
+
+
+
 {{ partial "footer.html" . }}
-{{ else }}
-{{ with (index (index .Site.Sections .Section) 0) }}
-{{ with .Page }}
-{{ partial "header.html" . }}
-{{ .Content }}
-{{ partial "footer.html" . }}
-{{ end }}
-{{ end }}
-{{ end }}

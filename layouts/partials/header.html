@@ -16,6 +16,7 @@
     <link href="{{ .Site.BaseURL }}/css/horsey.css" rel="stylesheet">
     <link href="{{ .Site.BaseURL }}/css/theme.css" rel="stylesheet">
     <link href="{{ .Site.BaseURL }}/css/hugo-theme.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{"css/bootstrap.min.css" | relURL}}">
     <script src="{{ .Site.BaseURL }}/js/jquery-2.x.min.js"></script>
     <style type="text/css">:root #header + #content > #left > #rlblock_left
     {display:none !important;}</style>
@@ -28,8 +29,8 @@
         <div id="overlay"></div>
 
         <div class="padding highlightable">
-
-            <div id="top-bar">
+        {{if ne .Source.BaseFileName "_index"}}
+          <div id="top-bar">
               {{ if and .IsPage .Site.Params.editURL }}
                 {{ $File := .File }}
                 {{ $Site := .Site }}
@@ -43,40 +44,35 @@
                 {{ end }}
               {{ end }}
               <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+
                   <span id="sidebar-toggle-span">
                       <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
                         <i class="fa fa-bars"></i>
                       </a>
                   </span>
-                {{ if and (not $isChapter) (.Params.toc) }}
-                <span id="toc-menu"><a href=""><i class="fa fa-list-alt"></i></a></span>
-                {{ end }}
-                {{ if ne $.Section "" }}
-                  {{ $section := index $.Site.Sections $.Section }}
-                  {{ $sectionPage := $.Site.GetPage "section" $.Section }}
-                  {{ if $sectionPage.Content }}
-                    {{ $first := $.Site.GetPage "section" $.Section }}
-                    {{ if ne $first.UniqueID $.UniqueID }}
-                <a href="{{ $first.RelPermalink }}" itemprop="url"><span itemprop="title">{{ $first.Title }}</span></a> <i class="fa fa-angle-right"></i>
-                    {{ end }}
-                  {{ else if gt $section.Len 0 }}
-                    {{ $first := (index $section 0).Page }}
-                    {{ if ne $first.UniqueID $.UniqueID }}
-                <a href="{{ $first.RelPermalink }}" itemprop="url"><span itemprop="title">{{ $first.Title }}</span></a> <i class="fa fa-angle-right"></i>
-                    {{ end }}
-                  {{ end }}
-                {{ end }}
-                {{ with .Title }}<span itemprop="title"> {{ . }}</span>{{ end }}
-              </div>
-              {{ if .Params.toc }}
-                  {{ partial "toc.html" . }}
-              {{ end }}
+                  <span id="toc-menu"><a href=""><i class="fa fa-list-alt"></i></a></span>
 
+                      <a href="{{.Site.BaseURL}}"> 
+                      <span class="fa fa-arrow-circle-right" style="font-size:larger" aria-hidden="true"></span> 
+                      {{.Site.Title}}</a> 
+                      {{ if ne nil ($.Scratch.Get "Breadcrumbs")}}
+                        {{ $.Scratch.Get "Breadcrumbs"  | safeHTML }}
+                      {{end}}
+                      {{ if eq .Params.menu.main.identifier nil}} > {{.Title}}{{end}}
+              </div>
+              
+                  {{ partial "toc.html" . }}
             </div>
-            {{ if $isChapter }}
-              <div id="chapter">
-            {{ end }}
-              <div id="body-inner">
-                {{ if not $isChapter }}
-                <h1>{{.Title}}</h1>
-                {{ end }}
+        {{end}}
+              {{if .Params.tags }}  
+                <div id="tags">
+                  {{ range $index, $tag := .Params.tags }}
+                      <a class="label label-default" href="{{$.Site.BaseURL}}/tags/{{ $tag | urlize }}">{{ $tag }}</a>
+                  {{ end }}
+                </div>
+              {{end}}
+            <div id="body-inner">
+              {{if ne .Source.BaseFileName "_index"}}
+              <h1>{{.Title}}</h1>
+              {{end}}  
+

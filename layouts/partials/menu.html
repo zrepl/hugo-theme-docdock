@@ -3,78 +3,103 @@
     <div id="header">
       {{ partial "logo.html" . }}
     </div>
-    {{ if .Site.Params.search }}
+    
         {{ partial "search.html" . }}
-    {{ end }}
 </div>
 
 
   <div class="highlightable">
     <ul class="topics">
-      {{ if $.Site.Params.menu }}
-        {{ $.Scratch.Set "menuItems" $.Site.Params.menu }}
-      {{ else }}
-        {{ $.Scratch.Set "_pages" (slice) }}
-        {{ range $key, $value := .Site.Sections }}
-          {{ $sectionPage := $.Site.GetPage "section" $key }}
-          {{ if $sectionPage.Content }}
-            {{ $.Scratch.Add "_pages" $sectionPage }}
-          {{ else if gt $value.Len 0 }}
-            {{ $.Scratch.Add "_pages" (index $value 0).Page }}
-          {{ end }}
-        {{ end }}
-        {{ $.Scratch.Set "menuItems" (slice)}}
-        {{ range $key, $value := sort ($.Scratch.Get "_pages") "Weight" }}
-          {{ $.Scratch.Add "menuItems" $value.Section }}
-        {{ end }}
-      {{ end }}
-      {{ $menuItems := $.Scratch.Get "menuItems" }}
-      {{ range $i, $key := $menuItems }}
-      {{ if ne $key "" }}
 
-      {{ $value := (index $.Site.Sections $key) }}
-      {{ $.Scratch.Set "_value" $value }}
-      {{ with $index := $.Site.GetPage "section" $key }}
-        {{ if .Content }}
-          {{ $.Scratch.Set "first" $index }}
-        {{ else if gt $value.Len 0}}
-          {{ $.Scratch.Set "first" (index $value 0).Page }}
-          {{ if gt $value.Len 1 }}
-            {{ $.Scratch.Set "_value" (after 1 $value) }}
-          {{ else }}
-            {{ $.Scratch.Set "_value" nil }}
-          {{ end }}
-        {{ end }}
-      {{ end }}
-      {{ $first := $.Scratch.Get "first" }}
-      {{ $value := $.Scratch.Get "_value" }}
+{{ $currentNode := . }}
+{{ range .Site.Menus.main }}
 
-      <li class="dd-item {{ if eq $.UniqueID $first.UniqueID }}active{{ end }} {{if eq $.Section $first.Section }}parent{{ end }}" data-nav-id="{{ $first.RelPermalink }}">
-        <a href="{{ $first.RelPermalink }}">
-          <span>
-            {{ if isset $first.Params "icon" }}
-              {{ printf $first.Params.icon | safeHTML }}
-            {{ end }}
-             {{ $first.Title }}
-            {{ if $.Site.Params.showVisitedLinks}}
-              <i class="fa fa-check read-icon"></i>
-             {{ end }}
-           </span>
-        </a>
-        {{ if gt $value.Len 0}}
-        <ul>
-          {{ range $k, $p := $value }}
-            <li class="dd-item {{ if eq $.UniqueID $p.Page.UniqueID }}active{{ end }}" data-nav-id="{{ $p.Page.RelPermalink }}">
-              <a href="{{ $p.Page.RelPermalink }}">
-                <span>{{ $p.Page.Title }}    {{ if $.Site.Params.showVisitedLinks}}  <i class="fa fa-check read-icon">  {{ end }} </i></span>
-              </a>
+    <li data-nav-id="{{ .URL }}" class="dd-item 
+    {{if ($currentNode.IsMenuCurrent "main" .) }}active{{end}} 
+    {{if ($currentNode.HasMenuCurrent "main" .) }}parent{{end}}">
+    <a href="{{.URL}}">{{.Name}}</a>
+    
+        {{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}
+        {{ $.Scratch.Set "CurrentMenu" . }}
+        {{ $.Scratch.Add "Breadcrumbs" (print " / <a href='" .URL  "'>" .Name "</a>" )  }}
+        {{ if .HasChildren }}
+            <ul class="n1">
+            {{ range .Children }}
+            {{ if ne .Identifier ""}}
+                <li data-nav-id="{{ .URL }}" class="dd-item {
+                    {{if ($currentNode.IsMenuCurrent "main" .) }}active{{end}} 
+                    {{if ($currentNode.HasMenuCurrent "main" .) }}parent{{end}}">
+                <a href="{{.URL}}">{{ .Name }} </a>
+                
+                {{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}
+                {{ $.Scratch.Set "CurrentMenu" . }}
+                {{ $.Scratch.Add "Breadcrumbs" (print " / <a href='" .URL  "'>" .Name "</a>" )  }}
+                {{ if .HasChildren }}
+                <ul class="n2">
+                {{ range .Children }}
+                {{ if ne .Identifier ""}}
+                <li data-nav-id="{{ .URL }}" class="dd-item 
+                    {{if ($currentNode.IsMenuCurrent "main" .) }}active{{end}} 
+                    {{if ($currentNode.HasMenuCurrent "main" .) }}parent{{end}}">
+                    <a href="{{.URL}}">{{ .Name }}</a>
+                
+
+                    {{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}
+                    {{ $.Scratch.Set "CurrentMenu" . }}
+                    {{ $.Scratch.Add "Breadcrumbs" (print " / <a href='" .URL  "'>" .Name "</a>" )  }}
+                    {{ if .HasChildren }}
+                    <ul class="n3">
+                    {{ range .Children }}
+                        {{ if ne .Identifier ""}}
+                        <li data-nav-id="{{ .URL }}" class="dd-item 
+                            {{if ($currentNode.IsMenuCurrent "main" .) }}active{{end}} 
+                            {{if ($currentNode.HasMenuCurrent "main" .) }}parent{{end}}">
+                            <a href="{{.URL}}">{{ .Name }} </a>
+                        
+
+                            {{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}
+                            {{ $.Scratch.Set "CurrentMenu" . }}
+                            {{ $.Scratch.Add "Breadcrumbs" (print " / <a href='" .URL  "'>" .Name "</a>" )  }}
+                            {{ if .HasChildren }}
+                            <ul class="n4">
+                            {{ range .Children }}
+                                {{ if ne .Identifier ""}}
+                                <li data-nav-id="{{ .URL }}" class="dd-item 
+                                    {{if ($currentNode.IsMenuCurrent "main" .) }}active{{end}} 
+                                    {{if ($currentNode.HasMenuCurrent "main" .) }}parent{{end}}">
+                                    <a href="{{.URL}}">{{ .Name }} </a>
+                                </li>
+                                {{ end }}
+                            {{ end }}
+                            </ul>
+                            {{ end }}
+                            {{ end }}
+                        </li>
+                        {{ end }}
+                    {{ end }}
+                    </ul>
+                    {{ end }}
+                    {{ end }}
+                </li>
+                {{ end }}
+                {{ end }}
+                </ul>
+                {{ end }}
+                {{ end }}
             </li>
-          {{ end }}
-        </ul>
+            {{ end }}
+            {{ end }}
+            </ul>
         {{ end }}
-      </li>
-      {{ end }}
-      {{ end }}
+        {{ end }}
+    </li>
+{{end}}
+
+
+
+
+   
+
     </ul>
     <hr>
      {{ if .Site.Params.showVisitedLinks}}

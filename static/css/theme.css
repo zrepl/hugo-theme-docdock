@@ -1,4 +1,16 @@
 @charset "UTF-8";
+#tags{
+    display: block;
+    float:left;
+    margin-top: -1rem;
+}
+
+.footline {
+margin-top:3rem;
+border-top: 1px dashed #183f81;
+font-size:smaller;
+}
+
 #top-github-link, #body #breadcrumbs {
     position: relative;
     top: 50%;
@@ -97,10 +109,10 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     box-shadow: inset 0 1px 3px rgba(0,0,0,.06),0 0 5px rgba(0,169,218,.7)
 }
 #header-wrapper {
-    background: #8451a1;
+    background: #2053AB;
     color: #fff;
     text-align: center;
-    border-bottom: 4px solid #9c6fb6;
+    border-bottom: 4px solid #183f81;
     padding: 1rem;
 }
 #header a {
@@ -116,8 +128,8 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 .searchbox {
     margin-top: 1rem;
     position: relative;
-    border: 1px solid #915eae;
-    background: #764890;
+    border: 1px solid  #6996e2;
+    background: #183f81;
     border-radius: 4px;
 }
 .searchbox label {
@@ -210,6 +222,9 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     right: 0.6rem;
     top: 0.7rem;
     font-size: 80%;
+}
+#sidebar .parent li, #sidebar .active li {
+    border-left: 1px solid gray;
 }
 #sidebar h5.parent a {
     background: #201b24;
@@ -305,7 +320,7 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     padding: 4px 0;
 }
 #sidebar ul li.visited > a .read-icon {
-    color: #9c6fb6;
+    color: #183f81;
     display: inline;
 }
 #sidebar ul li li {
@@ -342,7 +357,7 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     border: 1px solid #ccc;
 }
 #body .padding {
-    padding: 3rem 6rem;
+    padding: 1rem 6rem;
 }
 @media only all and (max-width: 59.938em) {
     #body .padding {
@@ -574,14 +589,14 @@ hr {
     padding: 25px;
     float: left;
     clear: both;
-    background: #9c6fb6;
+    background: #183f81;
     color: #fff;
 }
 #body a.anchor-link {
     color: #ccc;
 }
 #body a.anchor-link:hover {
-    color: #9c6fb6;
+    color: #183f81;
 }
 #body-inner .tabs-wrapper.ui-theme-badges {
     background: #1d1f21;
@@ -618,7 +633,7 @@ td {
     border: 1px solid #eaeaea;
 }
 .button {
-    background: #9c6fb6;
+    background: #183f81;
     color: #fff;
     box-shadow: 0 3px 0 #00a5d4;
 }
@@ -679,7 +694,7 @@ td {
 }
 .bullet-icon {
     float: left;
-    background: #9c6fb6;
+    background: #183f81;
     padding: 0.875rem;
     width: 3.5rem;
     height: 3.5rem;
@@ -689,7 +704,7 @@ td {
     text-align: center;
 }
 .bullet-icon-1 {
-    background: #9c6fb6;
+    background: #183f81;
 }
 .bullet-icon-2 {
     background: #00f3d8;

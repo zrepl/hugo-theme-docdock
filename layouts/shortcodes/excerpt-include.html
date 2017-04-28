@@ -1,0 +1,9 @@
+{{$pages := where .Site.AllPages "Title" (.Get "default" ) }}
+{{ if eq 0 (len $pages) }}
+	...
+{{else}}
+	{{ range $pages }}
+		{{.Description}}
+	{{end}}
+{{ end }}
+{{.Inner}}
