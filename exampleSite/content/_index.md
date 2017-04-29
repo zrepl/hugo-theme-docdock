@@ -30,8 +30,8 @@ This current documentation has been statically generated with Hugo with a simple
 
 
 
-{{% panel theme="success" header="Automated deployments" footer="Wercker is a CI/CD  Automation platform " %}}
-The current documentation is automatically published on git push thanks to [wercker](https://app.wercker.com/public/images/logo-wercker.svg) and gitPages.
+{{% panel theme="success" header="Automated deployments" footer="Netlify builds, deploys, and hosts  frontends." %}}
+The current documentation is automatically published thanks to [Netlify](https://www.netlify.com/).
 Read more about [Automated deployments with Wercker on gohugo.io](https://gohugo.io/tutorials/automated-deployments/)
 {{% /panel %}}
 
