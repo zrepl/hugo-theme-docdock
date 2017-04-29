@@ -1,0 +1,63 @@
++++
+draft = false
+title = "Home"
+description = ""
+date = "2017-04-24T18:36:24+02:00"
+
+
+creatordisplayname = "Valere JEANTET"
+creatoremail = "valere.jeantet@gmail.com"
+lastmodifierdisplayname = "Valere JEANTET"
+lastmodifieremail = "valere.jeantet@gmail.com"
+
++++
+
+<span id="sidebar-toggle-span">
+<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i></a>
+</span>
+
+<div id="top-github-link">
+  <a class="github-link" href="https://github.com/vjeantet/hugo-docdock-doc/edit/master/content/_index.md" target="blank">
+    <i class="fa fa-code-fork"></i> Edit this page</a>
+</div>
+
+# Hugo docDock theme documentation
+[Hugo-theme-docdock {{%icon fa-github%}}](https://github.com/vjeantet/hugo-theme-docdock) is a theme for Hugo, a fast and modern static website engine written in Go. Where Hugo is often used for blogs, this theme is fully designed for documentation.
+
+This theme is a partial porting of the [Learn theme of matcornic {{%icon fa-github%}}](https://github.com/matcornic/hugo-theme-learn), a modern flat-file CMS written in PHP.
+
+This current documentation has been statically generated with Hugo with a simple command : `hugo -t docdock` -- source code is [available here at GitHub {{%icon fa-github%}}](https://github.com/vjeantet/hugo-theme-docDock-doc)
+
+
+
+{{% panel theme="success" header="Automated deployments" footer="Wercker is a CI/CD  Automation platform " %}}
+The current documentation is automatically published on git push thanks to [wercker](https://app.wercker.com/public/images/logo-wercker.svg) and gitPages.
+Read more about [Automated deployments with Wercker on gohugo.io](https://gohugo.io/tutorials/automated-deployments/)
+{{% /panel %}}
+
+
+## Contribute to this documentation
+Feel free to update this content, just send a Edit a page and pullrequest it, your modification will be deployed automatically when merged.
+
+Use the "Edit this page" link you will find on top right of each page.
+
+
+## The Dodock theme
+This theme support a page tree structure to display and organize pages.
+It works like the confluence wiki from atlassian
+
+{{%panel%}}**content organization** : All contents are pages which belong to other pages. [read more about this]({{relref "organisation.md"}}) {{%/panel%}}
+
+## Features
+Here are the main features :
+
+* Handle 5 levels of documentation
+* Search using **lunr** index
+* [Generate RevealJS presentation]({{%relref "page-slide.md"%}}) from markdown (embededed or fullscreen page)
+* [Icons]({{%relref "shortcode/icon.md" %}}), [Buttons]({{%relref "shortcode/button.md" %}}), [Alerts]({{%relref "shortcode/alert.md" %}}), [Panels]({{%relref "shortcode/panel.md" %}}), [Tip/Note/Info/Warning boxes]({{%relref "shortcode/notice.md" %}})
+* Add shadow or border on images
+* [List child pages]({{%relref "shortcode/children.md" %}})
+* Tags
+
+
+![](https://raw.githubusercontent.com/vjeantet/hugo-theme-docdock/master/images/tn.png?classes=border,shadow)

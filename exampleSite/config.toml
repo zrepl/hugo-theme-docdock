@@ -1,0 +1,14 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Docdock"
+theme = "docdock"
+
+[params]
+editURL = "https://github.com/vjeantet/hugo-docdock-doc/edit/master/content/"
+noHomeIcon = false
+noSearch = false
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
+
