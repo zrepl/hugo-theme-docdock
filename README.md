@@ -2,7 +2,7 @@
 
 This repository contains a theme for [Hugo](https://gohugo.io/), based on great [Matcornic Learn theme](https://github.com/matcornic/hugo-theme-learn/).
 
-Visit the [theme documentation](https://vjeantet.github.io/hugo-docdock-doc/) to see what is going on. It is actually built with this theme.
+Visit the [theme documentation](http://docdock.netlify.com/) to see what is going on. It is actually built with this theme.
 
 ## Installation
 Navigate to your themes folder in your Hugo site and use the following commands:
@@ -17,7 +17,7 @@ Check that your Hugo version is minimum `0.20` with `hugo version`.
 
 ## Usage
 
-- [Visit the documentation](https://vjeantet.github.io/hugo-docdock-doc/)
+- [Visit the documentation](http://docdock.netlify.com/)
 
 # Main functionalities
 
