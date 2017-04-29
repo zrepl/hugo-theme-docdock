@@ -5,7 +5,7 @@ theme = "docdock"
 themesdir = "../.."
 
 [params]
-editURL = "https://github.com/matcornic/hugo-learn-doc/edit/master/exampleSite/content/"
+editURL = "https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/"
 noHomeIcon = false
 noSearch = false
 
