@@ -65,7 +65,7 @@ $( document ).ready(function() {
         render: function (li, suggestion) {
             var uri = suggestion.uri.substring(1,suggestion.uri.length);
             
-            suggestion.href = baseurl + uri;
+            suggestion.href = baseurl +"/"+ uri;
 
             var query = $("#search-by").val();
             var numWords = 2;
