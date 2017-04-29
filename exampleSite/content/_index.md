@@ -17,7 +17,7 @@ lastmodifieremail = "valere.jeantet@gmail.com"
 </span>
 
 <div id="top-github-link">
-  <a class="github-link" href="https://github.com/vjeantet/hugo-docdock-doc/edit/master/content/_index.md" target="blank">
+  <a class="github-link" href="https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/_index.md" target="blank">
     <i class="fa fa-code-fork"></i> Edit this page</a>
 </div>
 
