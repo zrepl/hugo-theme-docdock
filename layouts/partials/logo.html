@@ -1,3 +1,10 @@
-<a id="logo" href="{{.Site.BaseURL}}">
-  <span class="fa fa-anchor" style="font-size:xx-large"></span>
-</a>
+{{ range where .Site.Pages "Source.BaseFileName" "_header" }} 
+	{{ .Content }} 
+{{else}}
+<span style="font-size:smaller">
+	<a id="logo" href="{{.Site.BaseURL}}">
+	  <span class="fa fa-gears" style="font-size:large"></span>
+	</a>
+	Create a _header.md to customize this
+</small>
+{{end}}

@@ -3,16 +3,23 @@
     <div id="header">
       {{ partial "logo.html" . }}
     </div>
-    
+    {{if not .Site.Params.noSearch}}
         {{ partial "search.html" . }}
+    {{end}}
 </div>
-
 
   <div class="highlightable">
     <ul class="topics">
+    {{if not .Site.Params.noHomeIcon}}
+        <li data-nav-id="{{"/" | relURL}}" class="dd-item">
+        <a href="{{"/" | relURL}}"><i class="fa fa-fw fa-home"></i></a>
+        </li>
+    {{end}}
 
 {{ $currentNode := . }}
 {{ range .Site.Menus.main }}
+
+
 
     <li data-nav-id="{{ .URL }}" class="dd-item 
     {{if ($currentNode.IsMenuCurrent "main" .) }}active{{end}} 
