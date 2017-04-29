@@ -22,7 +22,7 @@ Check that your Hugo version is minimum `0.20` with `hugo version`.
 # Main functionalities
 
 - Search using `lunr` index
-- Handle 5 levels of documentation
+- Handle 5 levels of menu
 - Generate RevealJS presentation from markdown (embededed or fullscreen page)
 - Icons, Buttons, Alerts, Panels, Tip/Note/Info/Warning boxes
 - Add shadow or border on images
