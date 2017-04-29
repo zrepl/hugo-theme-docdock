@@ -2,6 +2,7 @@ baseURL = "/"
 languageCode = "en-us"
 title = "Docdock"
 theme = "docdock"
+themesdir = "../.."
 
 [params]
 editURL = "https://github.com/vjeantet/hugo-docdock-doc/edit/master/content/"
