@@ -1,7 +1,7 @@
 baseURL = "/"
 languageCode = "en-us"
 title = "Docdock"
-theme = "docdock"
+theme = "hugo-theme-docdock"
 themesdir = "../.."
 
 [params]
