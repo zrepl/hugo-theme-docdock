@@ -1,20 +1,22 @@
 # theme.toml template for a Hugo theme
 # See https://github.com/spf13/hugoThemes#themetoml for an example
 
-name = "Learn"
+name = "Docoo"
 license = "MIT"
-licenselink = "https://github.com/matcornic/hugo-theme-learn/blob/master/LICENSE.md"
-description = "Documentation theme for Hugo, based on Grav Learn theme"
-homepage = "https://matcornic.github.io/hugo-learn-doc/basics/what-is-this-hugo-theme/"
-tags = ["documentation", "grav", "learn", "doc"]
+licenselink = "https://github.com/vjeantet/hugo-theme-learn/blob/master/LICENSE.md"
+description = "Documentation theme for Hugo, based on Matcornic Learn theme"
+homepage = "https://vjeantet.github.io/hugo-theme-docdoc-docs/"
+repo = "https://github.com/vjeantet/hugo-theme-learn"
+tags = ["documentation", "menu","slide","search"]
 features = ["documentation"]
-min_version = 0.19
+min_version = 0.20
 
 [author]
-  name = "Mathieu Cornic"
-  homepage = "http://matcornic.github.io/"
+  name = "Valere JEANTET"
+  homepage = "http://vjeantet.fr/"
 
 [original]
-  name = "Grav Learn"
-  homepage = "http://learn.getgrav.org/"
-  repo = "https://github.com/getgrav/grav-learn"
+  name = "Learn"
+  homepage = "https://matcornic.github.io/hugo-learn-doc/basics/what-is-this-hugo-theme/"
+  repo = "https://github.com/matcornic/hugo-theme-learn"
+  licenselink = "https://github.com/matcornic/hugo-theme-learn/blob/master/LICENSE.md"
