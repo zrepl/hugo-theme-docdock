@@ -17,22 +17,20 @@
     {{end}}
 
 {{ $currentNode := . }}
+{{ $.Scratch.Set "ParentMenu" .Site.Menus.main }}
 {{ range .Site.Menus.main }}
-
-
-
     <li data-nav-id="{{ .URL }}" class="dd-item 
     {{if ($currentNode.IsMenuCurrent "main" .) }}active{{end}} 
     {{if ($currentNode.HasMenuCurrent "main" .) }}parent{{end}}">
     
     <a href="{{.URL}}">{{.Pre}}{{.Name}}{{.Post}}</a>
-    
-    
+        
         {{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}
         {{ $.Scratch.Set "CurrentMenu" . }}
         {{ $.Scratch.Add "Breadcrumbs" (print " / <a href='" .URL  "'>" .Name "</a>" )  }}
         {{ if .HasChildren }}
             <ul class="n1">
+            {{ $.Scratch.Set "ParentMenuTmp" .Children }}
             {{ range .Children }}
             {{ if ne .Identifier ""}}
                 <li data-nav-id="{{ .URL }}" class="dd-item {
@@ -42,9 +40,11 @@
                 
                 {{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}
                 {{ $.Scratch.Set "CurrentMenu" . }}
+                {{ $.Scratch.Set "ParentMenu" ($.Scratch.Get "ParentMenuTmp") }}
                 {{ $.Scratch.Add "Breadcrumbs" (print " / <a href='" .URL  "'>" .Name "</a>" )  }}
                 {{ if .HasChildren }}
                 <ul class="n2">
+                {{ $.Scratch.Set "ParentMenuTmp" .Children }}
                 {{ range .Children }}
                 {{ if ne .Identifier ""}}
                 <li data-nav-id="{{ .URL }}" class="dd-item 
@@ -55,9 +55,11 @@
 
                     {{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}
                     {{ $.Scratch.Set "CurrentMenu" . }}
+                    {{ $.Scratch.Set "ParentMenu" ($.Scratch.Get "ParentMenuTmp") }}
                     {{ $.Scratch.Add "Breadcrumbs" (print " / <a href='" .URL  "'>" .Name "</a>" )  }}
                     {{ if .HasChildren }}
                     <ul class="n3">
+                    {{ $.Scratch.Set "ParentMenuTmp" .Children }}
                     {{ range .Children }}
                         {{ if ne .Identifier ""}}
                         <li data-nav-id="{{ .URL }}" class="dd-item 
@@ -68,9 +70,11 @@
 
                             {{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}
                             {{ $.Scratch.Set "CurrentMenu" . }}
+                            {{ $.Scratch.Set "ParentMenu" ($.Scratch.Get "ParentMenuTmp") }}
                             {{ $.Scratch.Add "Breadcrumbs" (print " / <a href='" .URL  "'>" .Name "</a>" )  }}
                             {{ if .HasChildren }}
                             <ul class="n4">
+                            {{ $.Scratch.Set "ParentMenuTmp" .Children }}
                             {{ range .Children }}
                                 {{ if ne .Identifier ""}}
                                 <li data-nav-id="{{ .URL }}" class="dd-item 

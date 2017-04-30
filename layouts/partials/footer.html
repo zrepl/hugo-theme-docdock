@@ -7,11 +7,34 @@
     
 
     <div id="navigation">
-        
-        <!-- <a class="nav nav-prev" href="{{if .NextInSection}}{{ .NextInSection.URL }}{{end}}"> <i class="fa fa-chevron-left"></i></a> -->
-        
-        <!-- <a class="nav nav-next" href="{{if .PrevInSection}}{{ .PrevInSection.URL }}{{end}}" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a> -->
+        <!-- Sibbling contents -->
 
+        {{ $parentMenu :=  ($.Scratch.Get "ParentMenu") }}  
+        {{if  $parentMenu}}
+            {{ $curentURL :=  .RelPermalink }}  
+            {{ range $parentMenu }}
+                {{ if ne .URL $curentURL}}
+                    {{ if ne .Identifier ""}}
+                        {{ $.Scratch.Set "TmpMenu" . }}
+                        {{if eq ($.Scratch.Get "NextOK") "OK"}}
+                            {{if not ($.Scratch.Get "NextMenu")}}
+                                {{ $.Scratch.Set "NextMenu" . }}
+                            {{end}}
+                        {{end}}
+                    {{ end }}
+                {{ else }}
+                    {{ $.Scratch.Set "PrevMenu" ($.Scratch.Get "TmpMenu") }}
+                    {{ $.Scratch.Set "NextOK" "OK" }}
+                {{ end }}
+            {{ end }}
+
+            {{with ($.Scratch.Get "PrevMenu")}}
+                <a class="nav nav-prev" href="{{.URL}}"> <i class="fa fa-chevron-left"></i></a>
+            {{end}}
+            {{with ($.Scratch.Get "NextMenu")}}
+                <a class="nav nav-next" href="{{.URL}}" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+            {{end}}
+        {{ end }}
     </div>
 
     </section>
