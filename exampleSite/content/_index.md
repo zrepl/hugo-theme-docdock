@@ -46,7 +46,7 @@ Use the "Edit this page" link you will find on top right of each page.
 This theme support a page tree structure to display and organize pages.
 It works like the confluence wiki from atlassian
 
-{{%panel%}}**content organization** : All contents are pages which belong to other pages. [read more about this]({{relref "organisation.md"}}) {{%/panel%}}
+{{%panel%}}**content organization** : All contents are pages which belong to other pages. [read more about this]({{%relref "organisation.md"%}}) {{%/panel%}}
 
 ## Features
 Here are the main features :
