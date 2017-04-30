@@ -1,4 +1,4 @@
-<iframe id="slideFrame" src="{{.Site.BaseURL}}none.html" style="width:{{with .Get "width"}}{{.}}{{else}}100%{{end}};height:{{with .Get "height"}}{{.}}{{else}}30em{{end}}; border:0px"></iframe>
+<iframe id="slideFrame" src="{{"none.html" | relURL }}" style="width:{{with .Get "width"}}{{.}}{{else}}100%{{end}};height:{{with .Get "height"}}{{.}}{{else}}30em{{end}}; border:0px"></iframe>
 
 <div id="slideContent">
 	<link rel="stylesheet" href="{{"revealjs/css/reveal.css"|relURL}}">
