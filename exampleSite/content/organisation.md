@@ -57,13 +57,24 @@ example to display a github icon
 
 	+++
 	[menu.main]
-	name = "Github repo"
 	parent = ""
 	identifier = "repo"
 	pre ="<i class='fa fa-github'></i> "
 	+++
 
 ![dsf](/menu-entry-icon.png?height=40px&classes=shadow)
+
+### Customize menu entry label
+
+Add a `name` param next to `[menu.main]`
+
+	+++
+	[menu.main]
+	parent = ""
+	identifier = "repo"
+	pre ="<i class='fa fa-github'></i> "
+	name = "Github repo"
+	+++
 
 
 ### Order sibling menu/page entries

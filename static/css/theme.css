@@ -1027,6 +1027,12 @@ pre .copy-to-clipboard:hover {
     display: inline;
 }
 
+#sidebar #shortcuts h3 {
+    font-family: 'Novacento Sans Wide', 'Helvetica', 'Tahoma', 'Geneva', 'Arial', sans-serif;
+    color: white ;   
+}
+
+
 #searchResults {
     text-align: left;
 }
