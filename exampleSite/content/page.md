@@ -13,7 +13,7 @@ tags = ["tag1","tag2"]
 parent = ""
 identifier = "page"
 weight = 10
-
+pre ="<i class='fa fa-edit'></i> "
 +++
 
 

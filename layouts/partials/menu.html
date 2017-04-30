@@ -24,7 +24,9 @@
     <li data-nav-id="{{ .URL }}" class="dd-item 
     {{if ($currentNode.IsMenuCurrent "main" .) }}active{{end}} 
     {{if ($currentNode.HasMenuCurrent "main" .) }}parent{{end}}">
-    <a href="{{.URL}}">{{.Name}}</a>
+    
+    <a href="{{.URL}}">{{.Pre}}{{.Name}}{{.Post}}</a>
+    
     
         {{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}
         {{ $.Scratch.Set "CurrentMenu" . }}
@@ -36,7 +38,7 @@
                 <li data-nav-id="{{ .URL }}" class="dd-item {
                     {{if ($currentNode.IsMenuCurrent "main" .) }}active{{end}} 
                     {{if ($currentNode.HasMenuCurrent "main" .) }}parent{{end}}">
-                <a href="{{.URL}}">{{ .Name }} </a>
+                <a href="{{.URL}}">{{.Pre}}{{.Name}}{{.Post}}</a>
                 
                 {{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}
                 {{ $.Scratch.Set "CurrentMenu" . }}
@@ -48,7 +50,7 @@
                 <li data-nav-id="{{ .URL }}" class="dd-item 
                     {{if ($currentNode.IsMenuCurrent "main" .) }}active{{end}} 
                     {{if ($currentNode.HasMenuCurrent "main" .) }}parent{{end}}">
-                    <a href="{{.URL}}">{{ .Name }}</a>
+                    <a href="{{.URL}}">{{.Pre}}{{.Name}}{{.Post}}</a>
                 
 
                     {{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}
@@ -61,7 +63,7 @@
                         <li data-nav-id="{{ .URL }}" class="dd-item 
                             {{if ($currentNode.IsMenuCurrent "main" .) }}active{{end}} 
                             {{if ($currentNode.HasMenuCurrent "main" .) }}parent{{end}}">
-                            <a href="{{.URL}}">{{ .Name }} </a>
+                            <a href="{{.URL}}">{{.Pre}}{{.Name}}{{.Post}}</a>
                         
 
                             {{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}
@@ -74,7 +76,7 @@
                                 <li data-nav-id="{{ .URL }}" class="dd-item 
                                     {{if ($currentNode.IsMenuCurrent "main" .) }}active{{end}} 
                                     {{if ($currentNode.HasMenuCurrent "main" .) }}parent{{end}}">
-                                    <a href="{{.URL}}">{{ .Name }} </a>
+                                    <a href="{{.URL}}">{{.Pre}}{{.Name}}{{.Post}}</a>
                                 </li>
                                 {{ end }}
                             {{ end }}
@@ -103,9 +105,17 @@
 {{end}}
 
 
-
-
-   
+{{with .Site.Menus.shortcuts}}
+<section id="shortcuts">
+    {{ range sort . "Weight" "asc"}}
+        <li class="" role="">
+            {{.Pre}}
+            <a href="{{.URL}}">{{safeHTML .Name}}</a>
+            {{.Post}}
+        </li>
+    {{end}}
+</section>
+{{end}}
 
     </ul>
     

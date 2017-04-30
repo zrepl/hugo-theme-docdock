@@ -49,6 +49,23 @@ In this example "My child page" will be attached to "daddy" page, and displayed 
 	parent="dady"
 	+++
 
+### Add icon to a menu entry
+
+in the page frontmatter, add a `pre` param to insert any HTML code before the menu label:
+
+example to display a github icon 
+
+	+++
+	[menu.main]
+	name = "Github repo"
+	parent = ""
+	identifier = "repo"
+	pre ="<i class='fa fa-github'></i> "
+	+++
+
+![dsf](/menu-entry-icon.png?height=40px&classes=shadow)
+
+
 ### Order sibling menu/page entries
 
 in the [menu.main] add `weight` param with a number to order.
