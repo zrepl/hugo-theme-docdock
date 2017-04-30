@@ -15,8 +15,11 @@ identifier = "logo"
 weight = 21
 
 +++
+
 Create a `_header.md` page in content folder. Its content is what you get in the logo placeholder (top left of the screen).
 
-
-
 {{%panel theme="danger" header="**Logo placeholder consideration**"%}}Do not set [menu.main] in the frontmatter of your _header.md file{{%/panel%}}
+
+{{%alert info%}}**Tip :** you can add a image, a combobox with links to other documentation....{{%/alert%}}
+
+{{%alert info%}}**Tip 2 :** look at [ extra static menu]({{%relref "extramenu.md"%}}) if you want to add links to other website in this sidebar{{%/alert%}}
