@@ -83,6 +83,12 @@ $(window).resize(function() {
 
 
 jQuery(document).ready(function() {
+    jQuery('#sidebar .category-icon').on('click', function() {
+        $( this ).toggleClass("fa-angle-down fa-angle-right") ;
+        $( this ).parent().parent().children('ul').toggle() ;
+        return false;
+    });
+
     var sidebarStatus = searchStatus = 'open';
     $('#sidebar .highlightable').perfectScrollbar();
     // set the menu height
