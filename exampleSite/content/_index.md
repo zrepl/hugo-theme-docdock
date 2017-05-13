@@ -36,6 +36,7 @@ This theme is a partial porting of the [Learn theme of matcornic {{%icon fa-gith
 * [Excerpt]({{%relref "shortcode/excerpt.md"%}}) ! Include segment of content from one page in another
 * [Mermaid diagram]({{%relref "shortcode/mermaid.md" %}}) (flowchart, sequence, gantt)
 * [Icons]({{%relref "shortcode/icon.md" %}}), [Buttons]({{%relref "shortcode/button.md" %}}), [Alerts]({{%relref "shortcode/alert.md" %}}), [Panels]({{%relref "shortcode/panel.md" %}}), [Tip/Note/Info/Warning boxes]({{%relref "shortcode/notice.md" %}}), [Expand]({{%relref "shortcode/expand.md" %}})
+* [customizable look and feel]({{%relref "customizestyle.md"%}}), [theme variants]({{%relref "themevariant.md"%}})
 
 
 

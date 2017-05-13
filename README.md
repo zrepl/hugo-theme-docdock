@@ -16,7 +16,7 @@ Visit the [theme documentation](http://docdock.netlify.com/) to see what is goin
 - Mermaid diagram
 - Icons, Buttons, Alerts, Panels, Tip/Note/Info/Warning boxes
 - Image resizing, shadow...
-- Tags
+- Customizable look and feel
 
 ## Installation
 Navigate to your themes folder in your Hugo site and use the following commands:
