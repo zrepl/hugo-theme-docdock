@@ -106,6 +106,20 @@ in the [menu.main] add `weight` param with a number to order.
 Do not set identifier to hide a menu entry from... the menu.
 You content stays attached to its parent page.
 
+
+### Unfolded menu entry by default
+
+One or more menuentries can be displayed unfolded by default. (like the "Getting start" menu entry  in this website)
+
+In the site configuration's file `config.toml`, add a param `unfoldedMenus` with menus identifiers as array.
+
+example :
+
+```
+[params]
+unfoldedMenus = ["start"]
+```
+
 ### Folder structure and file name
 
 Content organization is not your folder structure.

@@ -11,6 +11,7 @@ editURL = "https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSit
 noHomeIcon = false # default is false
 noSearch = false # default is false
 showVisitedLinks = true # default is false
+unfoldedMenus = ["start"] # set menu identifiers which should be displayed unfolded  
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]

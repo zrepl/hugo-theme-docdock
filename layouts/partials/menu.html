@@ -19,9 +19,10 @@
 
         {{ $currentNode := . }}
         {{$showvisitedlinks := .Site.Params.showVisitedLinks }}
+        {{$unfoldedMenus := .Site.Params.unfoldedMenus }}
         {{ $.Scratch.Set "ParentMenuTmp" .Site.Menus.main }}
         {{ range .Site.Menus.main }}
-            {{ template "menu-item" dict "menu" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks }}
+            {{ template "menu-item" dict "menu" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks "unfoldedMenus" $unfoldedMenus}}
         {{end}}
 
         
@@ -56,14 +57,17 @@
 {{ define "menu-item" }}
     {{$currentNode := .currentnode }}
     {{$showvisitedlinks := .showvisitedlinks }}
+    {{$unfoldedMenus := .unfoldedMenus }}
     {{ if ne .menu.Identifier ""}}
         <li data-nav-id="{{ .menu.URL }}" class="dd-item 
         {{if ($currentNode.IsMenuCurrent "main" .menu) }}active{{end}} 
-        {{if ($currentNode.HasMenuCurrent "main" .menu) }}parent{{end}}">
+        {{if ($currentNode.HasMenuCurrent "main" .menu) }}parent{{end}}
+        {{if in $unfoldedMenus .menu.Identifier  }}parent{{end}}"
+        >
             <a href="{{.menu.URL}}">
                 <span>{{.menu.Pre}}{{.menu.Name}}{{.menu.Post}}</span>
                 {{ if .menu.HasChildren }}
-                    {{if or ($currentNode.IsMenuCurrent "main" .menu) ($currentNode.HasMenuCurrent "main" .menu)}}
+                    {{if or (in $unfoldedMenus .menu.Identifier ) ($currentNode.IsMenuCurrent "main" .menu) ($currentNode.HasMenuCurrent "main" .menu)}}
                         <i class="fa fa-angle-down fa-lg category-icon"></i>
                     {{else}}
                         <i class="fa fa-angle-right fa-lg category-icon"></i>
@@ -82,7 +86,7 @@
             {{ if .menu.HasChildren }}
                 <ul>
                 {{ range .menu.Children }}
-                    {{ template "menu-item" dict "menu" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks }}
+                    {{ template "menu-item" dict "menu" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks "unfoldedMenus" $unfoldedMenus}}
                 {{ end }}
                 </ul>
              {{ end }}
