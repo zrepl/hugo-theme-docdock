@@ -208,7 +208,9 @@ figcaption h4 {
     text-align: center;
     margin-top: -1.5em;
 }
-
+.is_stuck{
+    position: fixed; top: 0px; width: 1165px;
+}
 #tags{
     display: block;
     float:left;

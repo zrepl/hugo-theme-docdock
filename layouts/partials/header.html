@@ -20,6 +20,12 @@
         display:none !important;
       }
     </style>
+
+    {{with .Site.Params.themeVariant}}
+    <link href="{{(printf "css/theme-%s.css" .) | relURL}}" rel="stylesheet">
+    
+    {{end}}
+
     {{ partial "custom-head.html" . }}
   </head>
   <body class="" data-url="{{ .RelPermalink }}">
