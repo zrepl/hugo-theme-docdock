@@ -13,7 +13,7 @@ In site configuration file, you can set a variant name of this theme to load a s
 
 add a param `themeVariant = "VARIANT_NAME"` in your config.toml file.
 
-
+{{%info%}}Available variants change only colors at this moment{{%/info%}}
 
 ## Variant "gold"
 `themeVariant = "gold"`
