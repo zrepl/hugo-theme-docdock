@@ -1,5 +1,5 @@
 +++
-title = "Bitfan"
+title = "DocDock Theme for Hugo"
 description = ""
 date = "2017-04-24T18:36:24+02:00"
 
@@ -13,7 +13,7 @@ date = "2017-04-24T18:36:24+02:00"
 # Hugo docDock theme
 [Hugo-theme-docdock {{%icon fa-github%}}](https://github.com/vjeantet/hugo-theme-docdock) is a theme for Hugo, a fast and modern static website engine written in Go. Hugo is often used for blogs, **this theme is fully designed for documentation.**
 
-This theme is a partial porting of the [Learn theme of matcornic {{%icon fa-github%}}](https://github.com/matcornic/hugo-theme-learn), a modern flat-file CMS written in PHP.
+This theme is a partial porting of the [Learn theme of matcornic {{%icon fa-github%}}](https://github.com/matcornic/hugo-theme-learn).
 
 {{%panel%}}docDock works with a "page tree structure" to organize content : All contents are pages, which belong to other pages. [read more about this]({{%relref "content-organisation/_index.md"%}}) {{%/panel%}}
 
