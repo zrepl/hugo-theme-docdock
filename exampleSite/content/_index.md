@@ -1,14 +1,7 @@
 +++
-draft = false
-title = "Home"
+title = "Bitfan"
 description = ""
 date = "2017-04-24T18:36:24+02:00"
-
-
-creatordisplayname = "Valere JEANTET"
-creatoremail = "valere.jeantet@gmail.com"
-lastmodifierdisplayname = "Valere JEANTET"
-lastmodifieremail = "valere.jeantet@gmail.com"
 
 +++
 
@@ -22,21 +15,21 @@ lastmodifieremail = "valere.jeantet@gmail.com"
 
 This theme is a partial porting of the [Learn theme of matcornic {{%icon fa-github%}}](https://github.com/matcornic/hugo-theme-learn), a modern flat-file CMS written in PHP.
 
-{{%panel%}}docDock works with a "page tree structure" to organize content : All contents are pages, which belong to other pages. [read more about this]({{%relref "organisation.md"%}}) {{%/panel%}}
+{{%panel%}}docDock works with a "page tree structure" to organize content : All contents are pages, which belong to other pages. [read more about this]({{%relref "content-organisation/_index.md"%}}) {{%/panel%}}
 
 ## Main features
 
-* [Search]({{%relref "search.md" %}})
+* [Search]({{%relref "search/_index.md" %}})
 * **Unlimited menu levels**
 * [Generate RevealJS presentation]({{%relref "page-slide.md"%}}) from markdown (embededed or fullscreen page)
 * Automatic next/prev buttons to navigate through menu entries
-* [Image resizing, shadow...]({{%relref "shortcode/image.md" %}})
-* [Attachments files]({{%relref "shortcode/attachments.md" %}})
-* [List child pages]({{%relref "shortcode/children.md" %}})
-* [Excerpt]({{%relref "shortcode/excerpt.md"%}}) ! Include segment of content from one page in another
-* [Mermaid diagram]({{%relref "shortcode/mermaid.md" %}}) (flowchart, sequence, gantt)
-* [Icons]({{%relref "shortcode/icon.md" %}}), [Buttons]({{%relref "shortcode/button.md" %}}), [Alerts]({{%relref "shortcode/alert.md" %}}), [Panels]({{%relref "shortcode/panel.md" %}}), [Tip/Note/Info/Warning boxes]({{%relref "shortcode/notice.md" %}}), [Expand]({{%relref "shortcode/expand.md" %}})
-* [customizable look and feel]({{%relref "customizestyle.md"%}}), [theme variants]({{%relref "themevariant.md"%}})
+* [Image resizing, shadow...]({{%relref "shortcodes/image.md" %}})
+* [Attachments files]({{%relref "shortcodes/attachments.md" %}})
+* [List child pages]({{%relref "shortcodes/children/_index.md" %}})
+* [Excerpt]({{%relref "shortcodes/excerpt.md"%}}) ! Include segment of content from one page in another
+* [Mermaid diagram]({{%relref "shortcodes/mermaid.md" %}}) (flowchart, sequence, gantt)
+* [Icons]({{%relref "shortcodes/icon.md" %}}), [Buttons]({{%relref "shortcodes/button.md" %}}), [Alerts]({{%relref "shortcodes/alert.md" %}}), [Panels]({{%relref "shortcodes/panel.md" %}}), [Tip/Note/Info/Warning boxes]({{%relref "shortcodes/notice.md" %}}), [Expand]({{%relref "shortcodes/expand.md" %}})
+* [customizable look and feel]({{%relref "content-organisation/customize-style/_index.md"%}}), [theme variants]({{%relref "content-organisation/customize-style/theme-variants.md"%}})
 
 
 

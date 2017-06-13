@@ -1,6 +1,8 @@
 +++
-title = "Slide title"
+title = "My Slide ! fullscreen"
+date = "2017-04-24T18:36:24+02:00"
 type="slide"
+hidden=true
 
 theme = "league"
 [revealOptions]
@@ -11,36 +13,36 @@ history= true
 center= true
 +++
 
-# Slide 1
+# In the morning
 
 ___
 
-## Slide 1.1
+## Getting up
 
 - Turn off alarm
 - Get out of bed
 
 ___
 
-## Slide 1.2
+## Breakfast
 
 - Eat eggs
 - Drink coffee
 
 ---
 
-# Slide 2
+# In the evening
 
 ___
 
-## Slide 2.1
+## Dinner
 
 - Eat spaghetti
 - Drink wine
 
 ___
 
-## Slide 2.2
+## Going to sleep
 
 - Get in bed
 - Count sheep

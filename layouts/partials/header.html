@@ -33,7 +33,7 @@
         <section id="body">
         <div id="overlay"></div>
         <div class="padding highlightable">
-        {{if ne .Source.BaseFileName "_index"}}
+        {{if not .IsHome}}
           <div id="top-bar">
             {{ if and .IsPage .Site.Params.editURL }}
               {{ $File := .File }}
@@ -55,14 +55,8 @@
                   </a>
                 </span>
                 <span id="toc-menu"><a href=""><i class="fa fa-list-alt"></i></a></span>
-                <a href="{{.Site.BaseURL}}">
-                  <span class="fa fa-arrow-circle-right" style="font-size:larger" aria-hidden="true"></span>
-                  {{.Site.Title}}
-                </a>
-                {{ if ne nil ($.Scratch.Get "Breadcrumbs")}}
-                  {{ $.Scratch.Get "Breadcrumbs"  | safeHTML }}
-                {{end}}
-                {{ if eq .Params.menu.main.identifier nil}} > {{.Title}}{{end}}
+                
+                {{ template "breadcrumb" dict "page" . "value" .Title }} 
             </div>
             {{ partial "toc.html" . }}
           </div>
@@ -75,7 +69,17 @@
           </div>
         {{end}}
         <div id="body-inner">
-          {{if ne .Source.BaseFileName "_index"}}
+          {{if not .IsHome}}
             <h1>{{.Title}}</h1>
           {{end}}
+          
+</div>
 
+{{define "breadcrumb"}}
+{{ if .page.Parent}}
+{{$value := (printf "<a href='%s'>%s</a> > %s" .page.Parent.URL .page.Parent.Title .value)}}
+{{ template "breadcrumb" dict "page" .page.Parent "value" $value }} 
+{{else}}
+ {{.value|safeHTML}}
+{{end}}
+{{end}}

@@ -1,7 +1,7 @@
 {{ partial "header.html" . }}
 
-{{ range where .Site.Pages "Source.BaseFileName" "_index" }} 
-	{{ .Content }} 
+{{if .Site.Home.Content }} 
+{{.Site.Home.Content}}	
 {{else}}           
 	{{if eq .Site.Language.Lang "fr"}}
 		<h1>Personaliser la page d'accueil</h1>
