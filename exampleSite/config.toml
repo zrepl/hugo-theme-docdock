@@ -26,7 +26,7 @@ url = "https://github.com/vjeantet/hugo-theme-docdock"
 weight = 10
 
 [[menu.shortcuts]]
-name = "<i class='fa fa-bullhorn'></i> Showcases"
+name = "<i class='fa fa-camera'></i> Showcases"
 url = "/showcase"
 weight = 11
 
