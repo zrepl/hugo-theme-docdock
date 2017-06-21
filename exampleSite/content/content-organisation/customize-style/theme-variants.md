@@ -10,6 +10,11 @@ add a param `themeVariant = "VARIANT_NAME"` in your config.toml file.
 {{%info%}}Available variants change only colors at this moment{{%/info%}}
 
 
+## Variant "gray"
+`themeVariant = "gray"`
+
+![green docdock](/variant-gray.png)
+
 ## Variant "gold"
 `themeVariant = "gold"`
 
