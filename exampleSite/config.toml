@@ -23,15 +23,20 @@ pre = "<h3>More</h3>"
 name = "<i class='fa fa-github'></i> Github repo"
 identifier = "ds"
 url = "https://github.com/vjeantet/hugo-theme-docdock"
-weight = 1
+weight = 10
+
+[[menu.shortcuts]]
+name = "<i class='fa fa-bullhorn'></i> Showcases"
+url = "/showcase"
+weight = 11
 
 [[menu.shortcuts]]
 name = "<i class='fa fa-bookmark'></i> Hugo Documentation"
 identifier = "hugodoc"
 url = "https://gohugo.io/"
-weight = 2
+weight = 20
 
 [[menu.shortcuts]]
 name = "<i class='fa fa-bullhorn'></i> Credits"
 url = "/credits"
-weight = 3
+weight = 30
