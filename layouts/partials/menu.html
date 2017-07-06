@@ -25,7 +25,7 @@
 
         {{with .Site.Menus.shortcuts}}
         <section id="shortcuts">
-            {{ range sort . "Weight" "asc"}}
+            {{ range sort . "Weight"}}
                 <li class="" role="">
                     {{.Pre}}
                     <a href="{{.URL}}">{{safeHTML .Name}}</a>
@@ -71,7 +71,7 @@
     {{ if $showvisitedlinks}}<i style="color:grey" class="fa fa-check read-icon"></i>{{end}}
   </a>
     <ul>
-        {{ range .Pages }}
+        {{ range sort .Pages "Weight"}}
          {{ if not .Params.Hidden }}
           <li data-nav-id="{{.URL}}" class="dd-item
          {{if eq .UniqueID $currentNode.UniqueID}}active{{end}}

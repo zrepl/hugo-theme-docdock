@@ -2,12 +2,12 @@
 {{ $style :=  .Get "style" | default "li" }}
 {{ $depth :=  .Get "depth" | default 1 }}
 {{ $withDescription :=  .Get "description" | default false }}
-{{ $sortTerm :=  .Get "sort" | default "" }}
+{{ $sortTerm :=  .Get "sort" | default "Weight" }}
 
 
 <ul class="children children-{{$style}}">
-	{{template "childs" dict "menu" .Page.Sections "style" $style "showhidden" $showhidden "count" 1 "depth" $depth "pages" .Site.Pages "description" $withDescription "sortTerm" $sortTerm}}
 	{{template "childs" dict "menu" .Page.Pages "style" $style "showhidden" $showhidden "count" 1 "depth" $depth "pages" .Site.Pages "description" $withDescription "sortTerm" $sortTerm}}	
+	{{template "childs" dict "menu" .Page.Sections "style" $style "showhidden" $showhidden "count" 1 "depth" $depth "pages" .Site.Pages "description" $withDescription "sortTerm" $sortTerm}}
 </ul>
 
 
