@@ -1,4 +1,10 @@
 <nav id="sidebar" class="{{if $.Site.Params.showVisitedLinks }}showVisitedLinks{{end}}">
+
+
+
+{{ $currentNode := . }}
+{{ $showvisitedlinks := .Site.Params.showVisitedLinks }}
+<div class="highlightable">
   <div id="header-wrapper">
     <div id="header">
       {{ partial "logo.html" . }}
@@ -8,11 +14,7 @@
     {{end}}
   </div>
 
-
-
-{{ $currentNode := . }}
-{{ $showvisitedlinks := .Site.Params.showVisitedLinks }}
-<div class="highlightable">
+  
     <ul class="topics">
         {{if not .Site.Params.noHomeIcon}}
             <li data-nav-id="{{"/" | relURL}}" class="dd-item">

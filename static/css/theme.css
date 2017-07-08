@@ -655,7 +655,7 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     font-size: 1.2rem;
 }
 #footer {
-    padding: 3rem 1rem;
+    padding: 2rem 1rem 0 ;
     color: #b3b3b3;
     font-size: 13px;
 }
@@ -1029,11 +1029,11 @@ td {
 }
 
 #footer {
-    min-height: 200px;
+    min-height: 3s0px;
 }
 
 .highlightable {
-    padding: 1rem 0 1rem;
+    padding: 0rem 0 0rem;
     overflow: auto;
     position: relative;
     height: 100%;
