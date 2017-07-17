@@ -144,6 +144,12 @@ jQuery(document).ready(function() {
         });
     });
 
+    $.expr[":"].contains = $.expr.createPseudo(function(arg) {
+        return function( elem ) {
+            return $(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;
+        };
+    });
+
     if (sessionStorage.getItem('search-value')) {
         var searchValue = sessionStorage.getItem('search-value')
         $(document.body).removeClass('searchbox-hidden');
