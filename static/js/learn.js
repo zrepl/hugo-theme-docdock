@@ -136,7 +136,7 @@ jQuery(document).ready(function() {
         $(".highlightable").unhighlight({ element: 'mark' }).highlight(value, { element: 'mark' });
 
         if (ajax && ajax.abort) ajax.abort();
-        
+
         jQuery('[data-search-clear]').on('click', function() {
             jQuery('[data-search-input]').val('').trigger('input');
             sessionStorage.removeItem('search-input');
@@ -145,9 +145,11 @@ jQuery(document).ready(function() {
     });
 
     if (sessionStorage.getItem('search-value')) {
-        jQuery(document.body).removeClass('searchbox-hidden');
-        jQuery('[data-search-input]').val(sessionStorage.getItem('search-value'));
-        jQuery('[data-search-input]').trigger('input');
+        var searchValue = sessionStorage.getItem('search-value')
+        $(document.body).removeClass('searchbox-hidden');
+        $('[data-search-input]').val(searchValue);
+        $('[data-search-input]').trigger('input');
+        $('#body-inner').find(':contains(' + searchValue + ')').get(0).scrollIntoView();
     }
 
     // clipboard
@@ -233,7 +235,7 @@ jQuery(document).ready(function() {
             $('.progress').stop(true, false, true).fadeToggle(100);
         });
     }
-    
+
 });
 
 jQuery(window).on('load', function() {
