@@ -65,7 +65,7 @@
       <a href="{{ .RelPermalink}}">
         <span>{{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</span>
 
-        {{ $numberOfPages := len .Pages }}
+        {{ $numberOfPages := (add (len .Pages) (len .Sections)) }}
         {{ if ne $numberOfPages 0 }}
 
           {{if or (.IsAncestor $currentNode) (.Params.alwaysopen) }}
