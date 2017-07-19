@@ -87,6 +87,8 @@ in your frontmatter add `weight` param with a number to order.
 	weight = 4
 	+++
 
+{{%info%}}add `ordersectionsby = "title"` in your config.toml to order menu entries by title{{%/info%}}
+
 
 ### Hide a menu entry
 
