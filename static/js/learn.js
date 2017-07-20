@@ -155,7 +155,8 @@ jQuery(document).ready(function() {
         $(document.body).removeClass('searchbox-hidden');
         $('[data-search-input]').val(searchValue);
         $('[data-search-input]').trigger('input');
-        $('#body-inner').find(':contains(' + searchValue + ')').get(0).scrollIntoView();
+        var searchedElem = $('#body-inner').find(':contains(' + searchValue + ')').get(0);
+        searchedElem && searchedElem.scrollIntoView();
     }
 
     // clipboard
