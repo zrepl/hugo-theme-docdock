@@ -22,8 +22,14 @@
             </li>
         {{end}}
         
-        {{range .Site.Home.Sections}}
-        {{ template "section-tree-nav" dict "sect" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks}}
+        {{if eq .Site.Params.ordersectionsby "title"}}  
+          {{range .Site.Home.Sections.ByTitle}}
+          {{ template "section-tree-nav" dict "sect" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks}}
+          {{end}}
+        {{else}}
+          {{range .Site.Home.Sections.ByWeight}}
+          {{ template "section-tree-nav" dict "sect" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks}}
+          {{end}}
         {{end}}
 
         {{with .Site.Menus.shortcuts}}
