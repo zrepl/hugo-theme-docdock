@@ -1308,3 +1308,26 @@ pre .copy-to-clipboard:hover {
     margin-top: 5px;
 }
 
+
+@media print {
+  #sidebar, #navigation, #top-bar {
+    display:none;
+  }
+  #navigation * {
+   display:none; 
+   visibility: hidden;
+  }
+  #body-inner {
+   margin-bottom: 0px;
+  }
+  #footer, .footline{
+        margin-top: 1px;
+  }
+  body {
+    font-size:120%;
+    color:red;
+  }
+  #body{
+    margin-left: 0px;
+  }
+}
