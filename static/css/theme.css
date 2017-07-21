@@ -465,6 +465,15 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 #sidebar ul.topics {
     margin: 0 1rem;
 }
+
+#sidebar ul.topics label{
+    margin-top: 10px;
+    /*margin-bottom: 5px;*/
+    font-family: 'Novacento Sans Wide', 'Helvetica', 'Tahoma', 'Geneva', 'Arial', sans-serif;
+    font-weight:100;
+    color:white;
+}
+
 #sidebar ul.topics.searched ul {
     display: block;
 }

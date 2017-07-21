@@ -39,6 +39,18 @@ content
 
 {{%alert info %}} **_index.md** is required in each folder, it's your "folder home page"{{%/alert%}}
 
+### Add header to a menu entry
+
+in the page frontmatter, add a `head` param to insert any HTML code before the menu entry:
+
+example to display a "Hello"
+
+	+++
+	title = "Github repo"
+	head ="<label>Hello</label> "
+	+++
+
+
 
 ### Add icon to a menu entry
 
