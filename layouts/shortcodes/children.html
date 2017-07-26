@@ -4,11 +4,20 @@
 {{ $withDescription :=  .Get "description" | default false }}
 {{ $sortTerm :=  .Get "sort" | default "Weight" }}
 
+{{ .Scratch.Set "current" .Page }}
+
+{{if (.Get "page")}}
+	{{ with .Site.GetPage "section" (.Get "page") }}
+		{{ $.Scratch.Set "current" . }}
+	{{ end }}
+{{ end }}
+
+{{ $cpage := (.Scratch.Get "current") }}
 
 <ul class="children children-{{$style}}">
-	{{ .Scratch.Set "pages" .Page.Pages }}
-    {{ if .Page.Sections}}
-	    {{ .Scratch.Set "pages" (.Page.Pages | union .Page.Sections) }}
+	{{ .Scratch.Set "pages" $cpage.Pages }}
+    {{ if $cpage.Sections}}
+	    {{ .Scratch.Set "pages" ($cpage.Pages | union $cpage.Sections) }}
     {{end}}
     {{ $pages := (.Scratch.Get "pages") }}
 
