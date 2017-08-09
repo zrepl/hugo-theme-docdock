@@ -32,8 +32,8 @@
 }
 
 body {
-    font-size: 16px !important;
     color: #323232 !important;
+    max-width: 900pt;
 }
 
 #body a.highlight, #body a.highlight:hover, #body a.highlight:focus {
@@ -571,7 +571,7 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     border: 1px solid #ccc;
 }
 #body .padding {
-    padding: 1rem 4rem;
+    padding: 1rem 2rem;
 }
 @media only all and (max-width: 59.938em) {
     #body .padding {
