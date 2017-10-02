@@ -1,7 +1,10 @@
 {{- if in (.Get 0) "/_index.md" -}}
-	{{- $path := (trim (.Get 0) "_index.md") -}}
-	{{- with .Site.GetPage "section" (trim $path "/") -}}
-		{{- .URL -}}
+	{{- $comps := split (.Get 0) "/_index.md"}}
+	{{- with .Site.GetPage "section" (index $comps 0) -}}
+		{{ if in (index $comps 1) "/" }}{{.failOnlySingleSectionLevelSupported}}{{end}}
+		{{- .URL -}}{{- (index $comps 1) -}}
+	{{- else -}}
+		{{- .failBecauseInvalidSection -}}
 	{{- end -}}
 {{- else -}}
 	{{- with .Site.GetPage "section" (.Get 0) }}
