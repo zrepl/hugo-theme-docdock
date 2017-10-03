@@ -689,6 +689,11 @@ h1 {
     letter-spacing: -1px;
     font-weight: 200;
 }
+ul, ol {
+    margin: 0.5rem 0rem;
+    padding-left: 2rem;
+}
+
 blockquote {
     border-left: 10px solid #F0F2F4;
 }
@@ -701,6 +706,9 @@ blockquote cite {
     text-align: right;
     color: #666;
     font-size: 1.2rem;
+}
+.panel {
+    margin-top: 1rem;
 }
 div.notices {
     margin: 2rem 0;
@@ -830,6 +838,7 @@ hr {
 table {
     border: 1px solid #eaeaea;
     table-layout: auto;
+    line-height: 1.0;
 }
 th {
     background: #f7f7f7;
