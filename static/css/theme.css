@@ -275,7 +275,7 @@ pre {
     background: #fff;
     border: 1px solid #eaeaea;
 }
-b, strong, label, th {
+b, strong, th {
     font-weight: 600;
 }
 .default-animation, #header #logo-svg, #header #logo-svg path, #sidebar, #sidebar ul, #body, #body .padding, #body .nav {
