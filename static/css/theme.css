@@ -711,11 +711,11 @@ blockquote cite {
     margin-top: 1rem;
 }
 div.notices {
-    margin: 2rem 0;
+    margin: 1.25rem 0;
     position: relative;
 }
 div.notices p {
-    padding: 15px;
+    padding: 0.5rem 0.75rem;
     display: block;
     font-size: 1rem;
     margin-top: 0rem;
